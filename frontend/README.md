@@ -27,7 +27,6 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 ## Architecture & Modularity
 A visual map of frontend modules and dependencies:
 
-![Frontend Architecture](../docs/frontend_architecture.png)
 
 Modules & Stats:
 - **Components**: 12 React components (ChatWindow, FileUpload, InputBox, MessageBubble, SettingsDialog, Sidebar, UI/Dialog, ...)

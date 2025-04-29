@@ -1,8 +1,9 @@
-# AI Chat Application
 # Next.js + FastAPI + LangChain Chatbot & AI Agent Template
 
 -  A full-stack application featuring a Next.js frontend and FastAPI backend for AI-powered chat interactions with document processing capabilities.
 +  A starter template for building full-stack chatbots, RAG systems, and AI agents using Next.js, FastAPI, and LangChain.
+
+![Screen_Shot](./docs/screenshot.png)
 
 ## Features
 
@@ -27,17 +28,13 @@
 - Vector database for document embeddings
 
  ## Architecture Overview
--
-- Describe the high-level modular architecture, linking to detailed docs below. 
-- ![Architecture Diagram](./docs/architecture.png)
+
 + A visual representation of how the frontend and backend modules interact:
-+ 
-+ ![Architecture Diagram](./docs/architecture.png)
-+
+ ![Architecture Diagram](./docs/architecture.png)
 + Modules:
-+ - Frontend: 12 React components, 3 hooks, 1 settings module
-+ - Backend: 5 core services (API, Chains, Core, DB, WebSocket)
-+ - Shared: Environment config, vectorstore
+- Frontend: 12 React components, 3 hooks, 1 settings module
+- Backend: 5 core services (API, Chains, Core, DB, WebSocket)
+- Shared: Environment config, vectorstore
 
  ## Getting Started with Docker
 
@@ -143,11 +140,7 @@ pnpm dev
   - `data/` - Data storage
   - `uploads/` - Uploaded files
 
- ## License
-
- [MIT](LICENSE)
-+ 
-+ ---
-+ Dive deeper:
-+ - 📖 [Backend README](./backend/README.md)
-+ - 📖 [Frontend README](./frontend/README.md)
+---
+Dive deeper:
+- 📖 [Backend README](./backend/README.md)
+- 📖 [Frontend README](./frontend/README.md)
