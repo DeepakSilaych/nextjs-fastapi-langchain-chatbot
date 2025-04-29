@@ -1,15 +1,16 @@
 from pydantic_settings import BaseSettings
-from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class Settings(BaseSettings):
-    OPENAI_API_KEY: str = "your-openai-api-key"
-    OPENROUTER_API_KEY: str = "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"
+    OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "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")
+    GOOGLE_API_KEY: str = os.getenv("GOOGLE_API_KEY", "your-google-key-here")
     VECTORSTORE_DIR: str = "./data/vectorstore"
     UPLOAD_DIR: str = "./uploads"
     DATABASE_URL: str = "sqlite:///./app.db"
-    DEFAULT_MODEL: str = "openai/gpt-3.5-turbo"
-    
-    class Config:
-        env_file = ".env"
+    DEFAULT_MODEL: str = "gpt-3.5-turbo"
+    EMBEDDING_MODEL: str = "text-embedding-ada-002"
 
 settings = Settings()
