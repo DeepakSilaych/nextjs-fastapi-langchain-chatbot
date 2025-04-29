@@ -1,4 +1,4 @@
-'use client';
+import { api } from '../utils/api';
 
 export function useUpload() {
   const uploadFile = async (file: File) => {
@@ -6,14 +6,19 @@ export function useUpload() {
       const formData = new FormData();
       formData.append('file', file);
       
-      // TODO: Implement actual API call
-      // const response = await fetch('/api/files/upload', {
-      //   method: 'POST',
-      //   body: formData,
-      // });
+      const response = await api.post('/files/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        },
+        onUploadProgress: (progressEvent) => {
+          const percentCompleted = Math.round(
+            (progressEvent.loaded * 100) / (progressEvent.total || progressEvent.loaded)
+          );
+          console.log(`Upload Progress: ${percentCompleted}%`);
+        }
+      });
       
-      console.log('File upload simulation for:', file.name);
-      return true;
+      return response.data;
     } catch (error) {
       console.error('Error uploading file:', error);
       return false;
