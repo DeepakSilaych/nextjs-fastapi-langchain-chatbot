@@ -1,12 +1,10 @@
 # AI Chat Application
-+ [![Back to Root](./README.md)](README.md)  <!-- existing title -->
+# Next.js + FastAPI + LangChain Chatbot & AI Agent Template
 
- A full-stack application featuring a Next.js frontend and FastAPI backend for AI-powered chat interactions with document processing capabilities.
+-  A full-stack application featuring a Next.js frontend and FastAPI backend for AI-powered chat interactions with document processing capabilities.
++  A starter template for building full-stack chatbots, RAG systems, and AI agents using Next.js, FastAPI, and LangChain.
 
-+ <!-- Add modular design badge and links -->
-+ [![Modular Design](https://img.shields.io/badge/Modular-Architecture-blue)](#architecture-overview)
-
- ## Features
+## Features
 
 - AI chat functionality with session management
 - File upload and document processing
@@ -14,9 +12,9 @@
 - Modern UI with dark mode support
 + - Modular by Design: easily swap or extend modules (see [Architecture Overview](#architecture-overview))
 
- ## Tech Stack
+## Tech Stack
 
- ### Frontend
+### Frontend
 - Next.js 15
 - React 19
 - Tailwind CSS

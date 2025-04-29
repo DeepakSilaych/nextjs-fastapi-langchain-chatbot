@@ -1,8 +1,8 @@
-# Backend – AI Chat Application
+# FastAPI + LangChain Chatbot & AI Agent Template – Backend
 + [🔗 Root README](../README.md) | [🌐 Frontend README](../frontend/README.md)
 + [![Modular](https://img.shields.io/badge/Modular-Backend-blue)](#architecture--modularity)
 
- This is the backend service for the AI Chat Application, built with FastAPI. It provides REST APIs for chat, file upload, document processing, and integrates with vector databases and LLMs.
+ This is the backend component of the Next.js + FastAPI + LangChain starter template for building chatbots, RAG systems, and AI agents. It provides REST APIs for chat, file upload, document processing, and integrates with vector databases and LLMs.
 
 ## Features
 - FastAPI-based REST API
