@@ -1,6 +1,8 @@
 # Backend – AI Chat Application
++ [🔗 Root README](../README.md) | [🌐 Frontend README](../frontend/README.md)
++ [![Modular](https://img.shields.io/badge/Modular-Backend-blue)](#architecture--modularity)
 
-This is the backend service for the AI Chat Application, built with FastAPI. It provides REST APIs for chat, file upload, document processing, and integrates with vector databases and LLMs.
+ This is the backend service for the AI Chat Application, built with FastAPI. It provides REST APIs for chat, file upload, document processing, and integrates with vector databases and LLMs.
 
 ## Features
 - FastAPI-based REST API
@@ -97,10 +99,29 @@ backend/
 - `UPLOAD_DIR` (optional): Directory for uploaded files (default: `uploads/`)
 - `VECTORSTORE_DIR` (optional): Directory for vectorstore data (default: `data/vectorstore/`)
 
-## Development Notes
-- All uploaded files and vectorstore data are persisted in mounted volumes (see Dockerfile and docker-compose).
-- The backend is CORS-enabled for local frontend development.
-- For production, review CORS and security settings.
++ ## Architecture & Modularity
++ A detailed view of backend modules and dependencies:
++ 
++ ![Backend Architecture](../docs/backend_architecture.png)
++
++ Modules:
++ - **API**: chat routes, file handlers (app/api)
++ - **Chains**: agent orchestration, prompt templates (app/chains)
++ - **Core**: config, document processing, LLM abstraction (app/core)
++ - **DB**: models, session management (app/db)
++ - **WebSocket**: streaming endpoints (app/websocket)
++
++ ## Extending the Backend
++ Learn to swap or add modules:
++ 1. **Adding a new LLM**
++    - Implement `LLMInterface` in `app/core/llm.py`.
++    - Register the new class in `config.py` and update the vectorstore initialization.
++ 2. **Integrating a different database**
++    - Create a new `DatabaseEngine` subclass in `app/db/database.py`.
++    - Adjust `models.py` and connection settings in `.env`.
++ 3. **Custom Document Processor**
++    - Extend `DocumentProcessor` in `app/core/document_processor.py`.
++    - Update workflows in `chains/agent.py`.
 
 ## License
 MIT

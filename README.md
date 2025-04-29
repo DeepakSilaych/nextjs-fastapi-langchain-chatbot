@@ -1,35 +1,53 @@
 # AI Chat Application
++ [![Back to Root](./README.md)](README.md)  <!-- existing title -->
 
-A full-stack application featuring a Next.js frontend and FastAPI backend for AI-powered chat interactions with document processing capabilities.
+ A full-stack application featuring a Next.js frontend and FastAPI backend for AI-powered chat interactions with document processing capabilities.
 
-## Features
++ <!-- Add modular design badge and links -->
++ [![Modular Design](https://img.shields.io/badge/Modular-Architecture-blue)](#architecture-overview)
+
+ ## Features
 
 - AI chat functionality with session management
 - File upload and document processing
 - Vector database for document storage and retrieval
 - Modern UI with dark mode support
++ - Modular by Design: easily swap or extend modules (see [Architecture Overview](#architecture-overview))
 
-## Tech Stack
+ ## Tech Stack
 
-### Frontend
+ ### Frontend
 - Next.js 15
 - React 19
 - Tailwind CSS
 - Axios for API communication
 
-### Backend
+ ### Backend
 - FastAPI
 - SQLAlchemy for database operations
 - LangChain for document processing
 - Vector database for document embeddings
 
-## Getting Started with Docker
+ ## Architecture Overview
+-
+- Describe the high-level modular architecture, linking to detailed docs below. 
+- ![Architecture Diagram](./docs/architecture.png)
++ A visual representation of how the frontend and backend modules interact:
++ 
++ ![Architecture Diagram](./docs/architecture.png)
++
++ Modules:
++ - Frontend: 12 React components, 3 hooks, 1 settings module
++ - Backend: 5 core services (API, Chains, Core, DB, WebSocket)
++ - Shared: Environment config, vectorstore
 
-### Prerequisites
+ ## Getting Started with Docker
+
+ ### Prerequisites
 - Docker and Docker Compose installed
 - OpenAI API key
 
-### Setup
+ ### Setup
 
 1. Clone the repository:
 ```bash
@@ -51,9 +69,9 @@ docker-compose up -d
    - Frontend: http://localhost:3000
    - Backend API: http://localhost:8000
 
-## Development Setup (Without Docker)
+ ## Development Setup (Without Docker)
 
-### Backend
+ ### Backend
 
 1. Navigate to the backend directory:
 ```bash
@@ -81,7 +99,7 @@ export OPENAI_API_KEY=your-openai-api-key
 python manage.py serve
 ```
 
-### Frontend
+ ### Frontend
 
 1. Navigate to the frontend directory:
 ```bash
@@ -103,19 +121,19 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 pnpm dev
 ```
 
-## API Endpoints
+ ## API Endpoints
 
-### Chat API
+ ### Chat API
 - `POST /chat/send` - Send a message
 - `GET /chat/stream` - Stream chat responses
 - `GET /chat/history` - Get chat history
 - `GET /chat/sessions` - Get all chat sessions
 
-### Files API
+ ### Files API
 - `POST /files/upload` - Upload a file
 - `GET /files/list` - List all uploaded files
 
-## File Structure
+ ## File Structure
 
 - `frontend/` - Next.js frontend application
 - `backend/` - FastAPI backend application
@@ -127,6 +145,11 @@ pnpm dev
   - `data/` - Data storage
   - `uploads/` - Uploaded files
 
-## License
+ ## License
 
-[MIT](LICENSE)
+ [MIT](LICENSE)
++ 
++ ---
++ Dive deeper:
++ - 📖 [Backend README](./backend/README.md)
++ - 📖 [Frontend README](./frontend/README.md)
